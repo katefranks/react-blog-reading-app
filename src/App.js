@@ -1,4 +1,7 @@
-import { Component } from 'react';
+import { Component} from 'react';
+import './App.css';
+import './bike_background.jpeg';
+
 class Blog extends Component {
   constructor(props) {
     super(props);
@@ -10,10 +13,10 @@ class Blog extends Component {
   }
   componentDidMount() {
     const blogs = [{
-      title: 'a new blog',
+      title: 'Get Outside & Ride!',
       body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ex suscipit numquam provident in rerum, repellat, corrupti quibusdam magnam iure doloribus nihil cupiditate quas omnis necessitatibus, quam minima expedita voluptas.'
     }, {
-      title: 'another awesome post',
+      title: 'The Fastest Bikes of 2021',
       body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime laudantium nemo doloribus dolore omnis adipisci reprehenderit labore delectus, recusandae, voluptatibus amet nesciunt, ut? Quo, dolores sunt officia, cupiditate debitis amet.'
     }];
     // this.setState({ blogs: blogs });
@@ -41,7 +44,12 @@ class Blog extends Component {
     // setting an onClick event listener on the li to fire the selectBlog function.
     return(
         <>
-          <ul>{blogs}</ul>
+          <header id="pageHeader">
+          <h1>Kate's Bike Blog</h1>
+          </header>
+          <div >
+          <h2>Select a Blog Post:</h2>
+          <ul className="blogDisplay">{blogs}</ul>
           {
             this.state.selection &&
             <aside>
@@ -50,6 +58,7 @@ class Blog extends Component {
               <button onClick={() => this.setState({selection: null})}>Close</button>
             </aside>
           }
+          </div>
         </>
         //returning list of blog titles,
     );
